@@ -1,0 +1,36 @@
+{
+  "name": "hexo-generator-index-i18n",
+  "version": "0.1.0",
+  "description": "I18n index generator plugin for Hexo",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . && echo 'ESLint Passed!\\n'",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcatliu/hexo-generator-index-i18n.git"
+  },
+  "keywords": [
+    "hexo",
+    "generator",
+    "index",
+    "i18n",
+    "home"
+  ],
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xcatliu/hexo-generator-index-i18n/issues"
+  },
+  "homepage": "https://github.com/xcatliu/hexo-generator-index-i18n#readme",
+  "dependencies": {
+    "hexo-pagination": "^0.1.0",
+    "object-assign": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.8.1"
+  }
+}
