@@ -4,11 +4,11 @@ I18n index generator plugin for Hexo.
 
 It will generate a `:lang/index.html` for each language.
 
+> Impressed by [hexo-generator-index] and [hexo-generator-i18n](https://github.com/Jamling/hexo-generator-i18n).
+
 A live site using this plugin: http://js-index.com/
 
 And the GitHub repo for that site: https://github.com/xcatliu/js-index
-
-> Impressed by [hexo-generator-index] and [hexo-generator-i18n](https://github.com/Jamling/hexo-generator-i18n).
 
 ## Installation
 
