@@ -25,8 +25,7 @@
   },
   "homepage": "https://github.com/xcatliu/hexo-generator-index-i18n#readme",
   "dependencies": {
-    "hexo-pagination": "^0.1.0",
-    "object-assign": "^4.1.0"
+    "hexo-pagination": "^0.1.0"
   },
   "devDependencies": {
     "eslint": "^2.13.1",
