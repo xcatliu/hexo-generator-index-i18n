@@ -10,8 +10,9 @@ hexo.extend.generator.register('index-i18n', function (locals) {
   const config = this.config;
   const posts = locals.posts.sort(config.index_generator.order_by);
   const paginationDir = config.pagination_dir || 'page';
+  const languages = [].concat(config.language || []);
 
-  return config.language.filter(lang => lang !== 'default').reduce((prev, lang) => {
+  return languages.filter(lang => lang !== 'default').reduce((prev, lang) => {
     const filtedPosts = posts.filter(item => item.lang === lang);
     return prev.concat(pagination(lang, filtedPosts, {
       perPage: config.index_generator.per_page,
