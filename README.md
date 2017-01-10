@@ -18,16 +18,30 @@ $ npm install hexo-generator-index-i18n --save
 
 ## Options
 
-Use the same options as [hexo-generator-index]:
+The plugin uses the same options as [hexo-generator-index] plus one additional property:
 
 ```yml
 index_generator:
   per_page: 10
   order_by: -date
+  single_language_index: false
 ```
 
 - **per_page**: Posts displayed per page. (0 = disable pagination)
 - **order_by**: Posts order. (Order by date descending by default)
+- **single_language_index**: Show only default language posts at home page. By default is `false`. This means that home page can contain posts written on any language.
+
+### How to show only one specific language at root index (home)?
+
+1. Uninstall `hexo-generator-index` package:
+
+    ```shell
+    $ npm uninstall hexo-generator-index --save
+    ```
+
+1. Set `index_generator.single_language_index` property to `true` in config.
+
+1. Put homepage language at the first place in `language` array in config.
 
 ## License
 
