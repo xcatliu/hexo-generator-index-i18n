@@ -27,17 +27,22 @@ function getIndexPages(baseUrl, lang, posts, config) {
 hexo.config.index_generator = Object.assign({
   per_page: typeof hexo.config.per_page === 'undefined' ? 10 : hexo.config.per_page,
   order_by: '-date',
+  single_language_index: false,
 }, hexo.config.index_generator);
 
 hexo.extend.generator.register('index-i18n', function indexI18nGenerator(locals) {
   const config = this.config;
   const posts = locals.posts.sort(config.index_generator.order_by);
-  const languages = [].concat(config.language || []);
-  const indexPages = [].concat.apply([],
-    languages
-      .filter(lang => lang !== 'default')
-      .map(lang => getIndexPages(lang, lang, posts, config))
+  const languages = [].concat(config.language || [])
+    .filter(lang => lang !== 'default');
+  const defaultLanguage = languages[0];
+  let indexPages = [].concat.apply([],
+    languages.map(lang => getIndexPages(lang, lang, posts, config))
   );
+
+  if (config.index_generator.single_language_index && defaultLanguage) {
+    indexPages = indexPages.concat(getIndexPages('', defaultLanguage, posts, config));
+  }
 
   return indexPages;
 });
