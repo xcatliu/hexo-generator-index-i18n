@@ -6,7 +6,7 @@ hexo.config.index_generator = Object.assign({
   order_by: '-date',
 }, hexo.config.index_generator);
 
-hexo.extend.generator.register('index-i18n', function (locals) {
+hexo.extend.generator.register('index-i18n', function indexI18nGenerator(locals) {
   const config = this.config;
   const posts = locals.posts.sort(config.index_generator.order_by);
   const paginationDir = config.pagination_dir || 'page';
