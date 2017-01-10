@@ -1,6 +1,6 @@
 {
   "name": "hexo-generator-index-i18n",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "I18n index generator plugin for Hexo",
   "main": "index.js",
   "scripts": {
