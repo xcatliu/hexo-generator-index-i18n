@@ -1,5 +1,6 @@
 /* global hexo */
 const pagination = require('hexo-pagination');
+const path = require('path');
 
 /**
  * Generates translated and paginated index pages.
@@ -33,15 +34,16 @@ hexo.config.index_generator = Object.assign({
 hexo.extend.generator.register('index-i18n', function indexI18nGenerator(locals) {
   const config = this.config;
   const posts = locals.posts.sort(config.index_generator.order_by);
+  const indexPath = config.index_generator.path || '';
   const languages = [].concat(config.language || [])
     .filter(lang => lang !== 'default');
   const defaultLanguage = languages[0];
   let indexPages = [].concat.apply([],
-    languages.map(lang => getIndexPages(lang, lang, posts, config))
+    languages.map(lang => getIndexPages(path.join(lang, indexPath), lang, posts, config))
   );
 
   if (config.index_generator.single_language_index && defaultLanguage) {
-    indexPages = indexPages.concat(getIndexPages('', defaultLanguage, posts, config));
+    indexPages = indexPages.concat(getIndexPages(indexPath, defaultLanguage, posts, config));
   }
 
   return indexPages;
