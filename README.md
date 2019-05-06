@@ -1,5 +1,8 @@
 # hexo-generator-index-i18n
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/xcatliu/hexo-generator-index-i18n.svg)](https://greenkeeper.io/)
+
+
 I18n index generator plugin for Hexo.
 
 It will generate a `:lang/index.html` for each language.
